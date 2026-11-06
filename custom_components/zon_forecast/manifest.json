@@ -1,0 +1,14 @@
+{
+  "domain": "zon_forecast",
+  "name": "Zon Forecast",
+  "categories": ["energy.solar_batteries"],
+  "codeowners": ["@Ajomy"],
+  "config_flow": true,
+  "connectivity": ["cloud"],
+  "documentation": "https://github.com/Ajomy/zon-homeassistant",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Ajomy/zon-homeassistant/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
