@@ -1,0 +1,100 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Plak de API-sleutel van de accountpagina ({account_url}). De sleutel wordt gecontroleerd voordat die wordt opgeslagen.",
+        "data": {
+          "api_key": "API-sleutel"
+        }
+      },
+      "reauth_confirm": {
+        "title": "API-sleutel bijwerken",
+        "description": "De opgeslagen API-sleutel is geweigerd. Plak een nieuwe sleutel van de accountpagina ({account_url}).",
+        "data": {
+          "api_key": "API-sleutel"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Zon Forecast is niet bereikbaar. Controleer het netwerk en probeer het opnieuw.",
+      "invalid_auth": "De API-sleutel is geweigerd. Controleer de sleutel op de accountpagina.",
+      "not_configured": "Dit account is nog niet klaar voor een verwachting. Nog nodig: {missing}.",
+      "rate_limited": "Zon Forecast beperkt het aantal verzoeken voor deze sleutel. Wacht en probeer het opnieuw.",
+      "unavailable": "Zon Forecast is tijdelijk niet beschikbaar. Probeer het zo opnieuw.",
+      "unknown": "Zon Forecast gaf een antwoord dat deze integratie niet kon gebruiken."
+    },
+    "abort": {
+      "already_configured": "Dit Zon Forecast-systeem is al ingesteld.",
+      "already_in_progress": "Deze configuratie is al bezig.",
+      "reauth_successful": "De API-sleutel is bijgewerkt.",
+      "unique_id_mismatch": "Die API-sleutel hoort bij een ander zonnesysteem."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "description": "Kies hoe vaak een nieuwe verwachting wordt opgehaald. Het kortste interval is 30 minuten, ruim onder de limiet van 60 verzoeken per uur.",
+        "data": {
+          "update_interval": "Bijwerkinterval"
+        },
+        "data_description": {
+          "update_interval": "Minuten tussen verzoeken. 30 is het kortste interval."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "energy_current_hour": {
+        "name": "Geschatte energieproductie - dit uur"
+      },
+      "energy_next_hour": {
+        "name": "Geschatte energieproductie - komend uur"
+      },
+      "energy_production_today": {
+        "name": "Geschatte energieproductie - vandaag"
+      },
+      "energy_production_today_remaining": {
+        "name": "Geschatte energieproductie - rest van vandaag"
+      },
+      "energy_production_tomorrow": {
+        "name": "Geschatte energieproductie - morgen"
+      },
+      "power_highest_peak_time_today": {
+        "name": "Tijdstip hoogste vermogen - vandaag"
+      },
+      "power_highest_peak_time_tomorrow": {
+        "name": "Tijdstip hoogste vermogen - morgen"
+      },
+      "power_production_next_12hours": {
+        "name": "Geschat vermogen - over 12 uur"
+      },
+      "power_production_next_24hours": {
+        "name": "Geschat vermogen - over 24 uur"
+      },
+      "power_production_next_hour": {
+        "name": "Geschat vermogen - over 1 uur"
+      },
+      "power_production_now": {
+        "name": "Geschat vermogen - nu"
+      }
+    }
+  },
+  "exceptions": {
+    "cannot_connect": {
+      "message": "Zon Forecast is niet bereikbaar."
+    },
+    "not_configured": {
+      "message": "Het zonnesysteem is nog niet klaar voor een verwachting. Nog nodig: {missing}."
+    },
+    "rate_limited": {
+      "message": "Zon Forecast-limiet bereikt. Volgende verzoek over {retry_after} seconden."
+    },
+    "unavailable": {
+      "message": "Zon Forecast is tijdelijk niet beschikbaar."
+    },
+    "unexpected_response": {
+      "message": "Zon Forecast gaf een antwoord dat deze integratie niet kon gebruiken."
+    }
+  }
+}

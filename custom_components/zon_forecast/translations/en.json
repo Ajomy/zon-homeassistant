@@ -1,0 +1,100 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Paste the API key from the Account page ({account_url}). The key is checked before it is saved.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Update API key",
+        "description": "The saved API key was rejected. Paste a new key from the Account page ({account_url}).",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach Zon Forecast. Check the network and try again.",
+      "invalid_auth": "The API key was rejected. Check the key on the Account page.",
+      "not_configured": "This account is not ready for a forecast. Still needed: {missing}.",
+      "rate_limited": "Zon Forecast is limiting requests for this key. Wait and try again.",
+      "unavailable": "Zon Forecast is temporarily unavailable. Try again shortly.",
+      "unknown": "Zon Forecast returned a response this integration could not use."
+    },
+    "abort": {
+      "already_configured": "This Zon Forecast system is already configured.",
+      "already_in_progress": "Configuration is already in progress.",
+      "reauth_successful": "The API key was updated.",
+      "unique_id_mismatch": "That API key belongs to a different solar system."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "description": "Choose how often to request a new forecast. The shortest interval is 30 minutes, which stays under the limit of 60 requests per hour.",
+        "data": {
+          "update_interval": "Update interval"
+        },
+        "data_description": {
+          "update_interval": "Minutes between requests. 30 is the shortest interval."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "energy_current_hour": {
+        "name": "Estimated energy production - this hour"
+      },
+      "energy_next_hour": {
+        "name": "Estimated energy production - next hour"
+      },
+      "energy_production_today": {
+        "name": "Estimated energy production - today"
+      },
+      "energy_production_today_remaining": {
+        "name": "Estimated energy production - remaining today"
+      },
+      "energy_production_tomorrow": {
+        "name": "Estimated energy production - tomorrow"
+      },
+      "power_highest_peak_time_today": {
+        "name": "Highest power peak time - today"
+      },
+      "power_highest_peak_time_tomorrow": {
+        "name": "Highest power peak time - tomorrow"
+      },
+      "power_production_next_12hours": {
+        "name": "Estimated power production - in 12 hours"
+      },
+      "power_production_next_24hours": {
+        "name": "Estimated power production - in 24 hours"
+      },
+      "power_production_next_hour": {
+        "name": "Estimated power production - in 1 hour"
+      },
+      "power_production_now": {
+        "name": "Estimated power production - now"
+      }
+    }
+  },
+  "exceptions": {
+    "cannot_connect": {
+      "message": "Could not reach Zon Forecast."
+    },
+    "not_configured": {
+      "message": "The solar system is not ready for a forecast. Still needed: {missing}."
+    },
+    "rate_limited": {
+      "message": "Zon Forecast rate limit reached. Next request in {retry_after} seconds."
+    },
+    "unavailable": {
+      "message": "Zon Forecast is temporarily unavailable."
+    },
+    "unexpected_response": {
+      "message": "Zon Forecast returned a response this integration could not use."
+    }
+  }
+}
